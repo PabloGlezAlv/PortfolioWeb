@@ -1,0 +1,22 @@
+{
+  "name": "Pablo González - Portfolio",
+  "short_name": "Pablo Portfolio",
+  "description": "Portfolio profesional de Pablo González - Desarrollador de videojuegos y programador especializado en Unity, C#, IA y tecnologías web modernas.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#12D640",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "favicon.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "favicon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

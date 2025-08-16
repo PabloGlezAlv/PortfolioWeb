@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://pablogonzalez.dev/sitemap.xml
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /private/
+
+# Allow all stylesheets and scripts
+Allow: /assets/css/
+Allow: /assets/js/
+Allow: /assets/img/
