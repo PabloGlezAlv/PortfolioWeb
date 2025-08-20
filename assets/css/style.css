@@ -436,6 +436,7 @@ img {
     position: relative;
     background: var(--gradient-hero);
     overflow: hidden;
+    padding-top: 80px;
 }
 
 .hero-background {
