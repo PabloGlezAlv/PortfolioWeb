@@ -213,7 +213,7 @@ img {
 
 .section-dark p,
 .section-dark .section-subtitle {
-    color: var(--gray-300);
+    color: var(--gray-600);
 }
 
 .section-header {
@@ -974,7 +974,7 @@ img {
 
 .timeline-company {
     font-size: var(--text-base);
-    color: var(--gray-300);
+    color: var(--gray-600);
     margin-bottom: var(--space-1);
 }
 
@@ -1158,7 +1158,7 @@ img {
     top: var(--space-4);
     right: var(--space-4);
     background: rgba(0, 0, 0, 0.8);
-    color: var(--black);
+    color: #ffffff;
     padding: var(--space-2) var(--space-3);
     border-radius: var(--radius-lg);
     font-size: var(--text-sm);
@@ -1255,7 +1255,7 @@ img {
     display: inline-block;
     padding: var(--space-2) var(--space-4);
     background: rgba(255, 255, 255, 0.1);
-    color: var(--text-primary);
+    color: #ffffff;
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: 500;
