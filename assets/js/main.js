@@ -2,7 +2,7 @@
  * Modern Portfolio JavaScript
  * Designed for Pablo González Portfolio
  */
-(function() {
+(function () {
     'use strict';
 
     // Configuration
@@ -17,10 +17,7 @@
     // Typing animation texts
     const TYPING_TEXTS = [
         'Game Developer',
-        'AI Specialist', 
-        'Software Engineer',
-        'Unity Expert',
-        'Problem Solver'
+        'Software Engineer'
     ];
 
     // Global variables
@@ -45,7 +42,7 @@
 
     const throttle = (func, limit) => {
         let inThrottle;
-        return function(...args) {
+        return function (...args) {
             if (!inThrottle) {
                 func.apply(this, args);
                 inThrottle = true;
@@ -67,11 +64,11 @@
         const viewHeight = window.innerHeight;
         const viewTop = 0;
         const viewBottom = viewHeight;
-        
+
         const elementTop = rect.top;
         const elementBottom = rect.bottom;
         const elementHeight = rect.height;
-        
+
         const visibleHeight = Math.min(elementBottom, viewBottom) - Math.max(elementTop, viewTop);
         return visibleHeight >= elementHeight * threshold;
     };
@@ -94,9 +91,9 @@
             if (startTime === null) startTime = currentTime;
             const timeElapsed = currentTime - startTime;
             const progress = Math.min(timeElapsed / duration, 1);
-            
+
             window.scrollTo(0, startPosition + distance * easeInOutQuart(progress));
-            
+
             if (timeElapsed < duration) {
                 requestAnimationFrame(animation);
             }
@@ -112,7 +109,7 @@
             this.navMenu = document.getElementById('nav-menu');
             this.navToggle = document.getElementById('nav-toggle');
             this.navLinks = document.querySelectorAll('.nav-link');
-            
+
             this.init();
         }
 
@@ -135,7 +132,7 @@
                     e.preventDefault();
                     const targetId = link.getAttribute('href');
                     const targetSection = link.getAttribute('data-section');
-                    
+
                     if (targetId && targetId.startsWith('#')) {
                         this.navigateToSection(targetId, targetSection);
                         this.closeMobileMenu();
@@ -168,12 +165,12 @@
 
         navigateToSection(targetId, sectionName) {
             if (isScrolling) return;
-            
+
             isScrolling = true;
             currentSection = sectionName || targetId.substring(1);
-            
+
             smoothScrollTo(targetId);
-            
+
             setTimeout(() => {
                 isScrolling = false;
                 this.updateActiveSection();
@@ -195,7 +192,7 @@
 
         handleScroll() {
             const scrollY = window.pageYOffset;
-            
+
             // Update navbar appearance
             if (scrollY > CONFIG.scrollThreshold) {
                 this.navbar.classList.add('scrolled');
@@ -240,7 +237,7 @@
             this.currentCharIndex = 0;
             this.isDeleting = false;
             this.isWaiting = false;
-            
+
             this.init();
         }
 
@@ -257,7 +254,7 @@
 
         type() {
             const currentText = TYPING_TEXTS[this.currentTextIndex];
-            
+
             if (!this.isDeleting && this.currentCharIndex < currentText.length) {
                 // Typing
                 this.element.textContent = currentText.substring(0, this.currentCharIndex + 1);
@@ -321,7 +318,7 @@
             const animate = (currentTime) => {
                 const elapsed = currentTime - startTime;
                 const progress = Math.min(elapsed / duration, 1);
-                
+
                 const currentValue = Math.floor(startValue + (target - startValue) * this.easeOutQuart(progress));
                 element.textContent = currentValue;
 
@@ -377,7 +374,7 @@
             this.filterButtons = document.querySelectorAll('.filter-btn');
             this.projectCards = document.querySelectorAll('.project-card');
             this.activeFilter = 'all';
-            
+
             this.init();
         }
 
@@ -397,11 +394,11 @@
 
         setActiveFilter(filter) {
             this.activeFilter = filter;
-            
+
             this.filterButtons.forEach(button => {
                 button.classList.remove('active');
             });
-            
+
             const activeButton = document.querySelector(`[data-filter="${filter}"]`);
             if (activeButton) {
                 activeButton.classList.add('active');
@@ -412,7 +409,7 @@
             this.projectCards.forEach(card => {
                 const categories = card.getAttribute('data-category');
                 const shouldShow = filter === 'all' || (categories && categories.includes(filter));
-                
+
                 if (shouldShow) {
                     card.style.display = 'block';
                     setTimeout(() => {
@@ -456,7 +453,7 @@
                     input.addEventListener('focus', () => {
                         group.classList.add('focused');
                     });
-                    
+
                     input.addEventListener('blur', () => {
                         if (!input.value) {
                             group.classList.remove('focused');
@@ -469,7 +466,7 @@
         async handleSubmit() {
             const formData = new FormData(this.form);
             const data = Object.fromEntries(formData);
-            
+
             // Here you would typically send the data to a server
             // For now, we'll just show a success message
             this.showMessage('Message sent successfully! I will contact you soon.', 'success');
@@ -494,13 +491,13 @@
                 transform: translateX(400px);
                 transition: transform 0.3s ease;
             `;
-            
+
             document.body.appendChild(messageEl);
-            
+
             setTimeout(() => {
                 messageEl.style.transform = 'translateX(0)';
             }, 100);
-            
+
             setTimeout(() => {
                 messageEl.style.transform = 'translateX(400px)';
                 setTimeout(() => {
@@ -564,6 +561,113 @@
         images.forEach(img => imageObserver.observe(img));
     };
 
+    // Project Modal class
+    class ProjectModal {
+        constructor() {
+            this.modal = document.getElementById('project-modal');
+            this.modalBody = document.getElementById('modal-body');
+            this.closeBtn = document.querySelector('.close-modal');
+            this.projectLinks = document.querySelectorAll('.project-link[href$=".html"]');
+
+            this.init();
+        }
+
+        init() {
+            if (!this.modal) return;
+            this.bindEvents();
+        }
+
+        bindEvents() {
+            // Open modal triggers
+            this.projectLinks.forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    const url = link.getAttribute('href');
+                    this.loadProject(url);
+                });
+            });
+
+            // Close modal triggers
+            this.closeBtn.addEventListener('click', () => this.close());
+
+            this.modal.addEventListener('click', (e) => {
+                if (e.target === this.modal) {
+                    this.close();
+                }
+            });
+
+            // ESC key close
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && this.modal.classList.contains('active')) {
+                    this.close();
+                }
+            });
+        }
+
+        async loadProject(url) {
+            try {
+                // Show loading state if needed
+                this.modalBody.innerHTML = '<div style="text-align:center;padding:50px;"><div class="spinner-border text-success" role="status"><span class="sr-only">Loading...</span></div></div>';
+                this.open();
+
+                const response = await fetch(url);
+                if (!response.ok) throw new Error('Failed to load project');
+
+                const html = await response.text();
+                const parser = new DOMParser();
+                const doc = parser.parseFromString(html, 'text/html');
+
+                // Extract content from #portfolio-details or #main
+                const content = doc.querySelector('#portfolio-details') || doc.querySelector('#main');
+
+                if (content) {
+                    // Update image paths if they are relative
+                    const images = content.querySelectorAll('img');
+                    images.forEach(img => {
+                        const src = img.getAttribute('src');
+                        if (src && !src.startsWith('http') && !src.startsWith('/')) {
+                            // Assuming projects are in /projects/ folder and assets in /assets/
+                            // If src is "../assets/...", remove "../"
+                            if (src.startsWith('../assets')) {
+                                img.src = src.substring(3);
+                            }
+                        }
+                    });
+
+                    this.modalBody.innerHTML = '';
+                    this.modalBody.appendChild(content);
+
+                    // Re-initialize any scripts if necessary (e.g. carousels)
+                    // For typical static content this is fine. 
+                    // Video iframes should load automatically.
+                } else {
+                    throw new Error('Content not found');
+                }
+
+            } catch (error) {
+                console.error('Error loading project:', error);
+                this.modalBody.innerHTML = '<div class="alert alert-danger">Error loading project details. Please try again.</div>';
+            }
+        }
+
+        open() {
+            this.modal.style.display = 'flex';
+            // Force reflow
+            this.modal.offsetHeight;
+            this.modal.classList.add('active');
+            document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+
+        close() {
+            this.modal.classList.remove('active');
+            setTimeout(() => {
+                this.modal.style.display = 'none';
+                this.modalBody.innerHTML = ''; // Clear content
+                document.body.style.overflow = '';
+            }, 300); // Match transition duration
+        }
+    }
+
     // Initialize everything when DOM is ready
     const init = () => {
         // Initialize core components
@@ -572,19 +676,20 @@
         new SkillsAnimation();
         new ProjectFilter();
         new ContactForm();
-        
+        new ProjectModal(); // Init modal
+
         // Initialize typing animation
         const typingElement = document.querySelector('.typing-text');
         if (typingElement) {
             new TypingAnimation(typingElement);
         }
-        
+
         // Initialize other features
         initAOS();
         initScrollIndicator();
         initPreloader();
         optimizePerformance();
-        
+
         // Add loaded class to body
         document.body.classList.add('loaded');
     };
