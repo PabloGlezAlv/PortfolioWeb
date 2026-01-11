@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>RTBEngine - Custom Game Engine</title>
+    <meta content="Custom 3D Game Engine built with C++ and OpenGL" name="description">
+    <meta content="Game Engine, C++, OpenGL, ECS, Lua" name="keywords">
+
+    <!-- Favicons -->
+    <link href="../assets/img/favicon.png" rel="icon">
+    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+    <!-- Google Fonts -->
+    <link
+        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i"
+        rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+    <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+
+    <!-- Template Main CSS File -->
+    <link href="../assets/css/style.css" rel="stylesheet">
+    <style>
+        .documentation-content h2 {
+            color: #12d640;
+            margin-top: 30px;
+        }
+
+        .documentation-content h3 {
+            color: #fff;
+            margin-top: 20px;
+            font-size: 1.3rem;
+        }
+
+        .documentation-content p,
+        .documentation-content li {
+            color: #eee;
+        }
+
+        .documentation-content code {
+            background: #333;
+            color: #12d640;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
+
+        .documentation-content pre {
+            background: #1a1a1a;
+            padding: 15px;
+            border-radius: 5px;
+            color: #f8f8f2;
+            overflow-x: auto;
+        }
+
+        .status-badge {
+            background: #ffc107;
+            color: #000;
+            padding: 5px 10px;
+            border-radius: 4px;
+            font-weight: bold;
+            font-size: 0.8rem;
+            display: inline-block;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <main id="main">
+        <div id="portfolio-details" class="portfolio-details">
+            <div class="container">
+
+                <div class="row">
+                    <div class="col-lg-12 portfolio-info">
+                        <span class="status-badge">In Development</span>
+                        <h2 style="color:#12d640">RTBEngine - Game Engine Architecture</h2>
+                        <ul>
+                            <li><strong>Category</strong>: Tools / Game Engine</li>
+                            <li><strong>Tech Stack</strong>: C++17, OpenGL 4.3+, SDL2, Bullet Physics, FMOD, Lua, ImGui
+                            </li>
+                            <li><strong>Platform</strong>: Windows x64</li>
+                        </ul>
+
+                        <div class="documentation-content">
+                            <h2>Executive Summary</h2>
+                            <p>RTBEngine is a custom 3D game engine designed for Windows, built with C++ and featuring
+                                an Entity Component System (ECS) architecture. The engine integrates industry-standard
+                                libraries for graphics, physics, and audio, while maintaining custom implementations for
+                                core systems like mathematics and ECS.</p>
+
+                            <div class="alert alert-info" role="alert">
+                                <strong>Important:</strong> RTBEngine is a standalone engine library. Games will be
+                                developed as separate projects that link against this engine.
+                            </div>
+
+                            <h2>Current Implementation Status</h2>
+                            <h3>Completed Systems</h3>
+                            <ul>
+                                <li>✅ Core Application Framework</li>
+                                <li>✅ Window Management (SDL2)</li>
+                                <li>✅ Input System (Keyboard/Mouse)</li>
+                                <li>✅ Custom Math Library (Vector2/3/4, Matrix4, Quaternion)</li>
+                                <li>✅ Rendering System (OpenGL 4.3+, Shaders, Materials, Textures)</li>
+                                <li>✅ Model Loading (Assimp with multi-mesh support)</li>
+                                <li>✅ ECS System (GameObject, Component, Scene)</li>
+                                <li>✅ Physics System (Bullet Physics)</li>
+                                <li>✅ Audio System (FMOD)</li>
+                                <li>✅ Resource Manager</li>
+                                <li>✅ Lighting System (Directional, Point, Spot) & Shadow Mapping</li>
+                                <li>✅ Skybox System</li>
+                                <li>✅ UI System (ImGui-based) & Event System</li>
+                                <li>✅ Skeletal Animation System (GPU skinning)</li>
+                                <li>✅ Scripting System (Lua + LuaBridge)</li>
+                                <li>✅ Scene Serialization</li>
+                            </ul>
+
+                            <h3>Pending Systems</h3>
+                            <ul>
+                                <li>⏳ Post-Processing</li>
+                            </ul>
+
+                            <h2>System Architecture</h2>
+                            <p>The engine uses a GameObject-Component architecture where scenes are defined in .lua
+                                files using a declarative syntax.</p>
+
+                            <h3>Entity Component System (ECS)</h3>
+                            <pre>
+Scene
+  └── GameObject[]
+        ├── Transform (built-in)
+        └── Component[]
+              ├── MeshRenderer
+              ├── RigidBodyComponent
+              ├── LightComponent
+              └── ...</pre>
+
+                            <h3>Scripting & Serialization</h3>
+                            <p>Scenes are loaded from Lua files. The <code>SceneLoader</code> instantiates components
+                                via a <code>ComponentRegistry</code>.</p>
+                            <pre><code class="language-lua">function CreateScene()
+    return {
+        name = "MyScene",
+        gameObjects = {
+            {
+                name = "Player",
+                components = {
+                    { type = "MeshRenderer", model = "player.fbx" },
+                    { type = "RigidBodyComponent", mass = 1.0 }
+                }
+            }
+        }
+    }
+end</code></pre>
+
+                            <h2>Editor Architecture</h2>
+                            <p>RTBEngine Editor is a visual editor featuring:</p>
+                            <ul>
+                                <li>Dockable Panel Layout with ImGui</li>
+                                <li>Scene Hierarchy and Inspector panels</li>
+                                <li>3D Scene View with gizmos</li>
+                                <li>C++ Hot Reload via DLL plugin system</li>
+                            </ul>
+
+                            <p>The editor runs the game engine in a controlled environment, rendering the scene to
+                                framebuffers that are displayed within ImGui panels.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <script src="../assets/vendor/jquery/jquery.min.js"></script>
+    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+    <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+    <script src="../assets/vendor/venobox/venobox.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+
+</body>
+
+</html>
