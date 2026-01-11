@@ -790,6 +790,7 @@ img {
     z-index: 2;
 }
 
+/* Scrollbar for modal */
 .timeline-content {
     background: rgba(255, 255, 255, 0.1);
     padding: var(--space-6);
@@ -797,6 +798,110 @@ img {
     backdrop-filter: blur(10px);
     border: 1px solid rgba(255, 255, 255, 0.2);
     transition: var(--transition-normal);
+}
+
+/* Modal Styles */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: var(--z-modal);
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.modal.active {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+}
+
+.modal-content {
+    position: relative;
+    background-color: var(--white);
+    margin: auto;
+    padding: 0;
+    width: 90%;
+    max-width: 1000px;
+    height: auto;
+    max-height: 90vh;
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-2xl);
+    overflow-y: auto;
+    transform: scale(0.9);
+    transition: transform var(--transition-normal);
+    display: flex;
+    flex-direction: column;
+}
+
+.modal.active .modal-content {
+    transform: scale(1);
+}
+
+.close-modal {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    width: 40px;
+    height: 40px;
+    background: var(--white);
+    border-radius: var(--radius-full);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-secondary);
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 10;
+    box-shadow: var(--shadow-md);
+    transition: var(--transition-fast);
+}
+
+.close-modal:hover {
+    color: var(--secondary-color);
+    transform: scale(1.1);
+    box-shadow: var(--shadow-lg);
+}
+
+#modal-body {
+    padding: var(--space-6);
+}
+
+/* Adjust portfolio details for modal context */
+#modal-body .portfolio-details {
+    padding: 0;
+}
+
+#modal-body .portfolio-info h2 {
+    font-size: var(--text-3xl);
+    margin-top: 0;
+}
+
+/* Scrollbar for modal */
+.modal-content::-webkit-scrollbar {
+    width: 8px;
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background: var(--gray-400);
+    border-radius: 4px;
+}
+
+.modal-content::-webkit-scrollbar-thumb:hover {
+    background: var(--gray-600);
 }
 
 .timeline-content:hover {
