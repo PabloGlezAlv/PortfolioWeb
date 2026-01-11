@@ -208,7 +208,7 @@ img {
 .section-dark h4,
 .section-dark h5,
 .section-dark h6 {
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .section-dark p,
@@ -790,7 +790,7 @@ img {
     font-size: var(--text-2xl);
     font-weight: 600;
     margin-bottom: var(--space-8);
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .timeline-title i {
@@ -968,7 +968,7 @@ img {
 .timeline-info h4 {
     font-size: var(--text-lg);
     font-weight: 600;
-    color: var(--text-primary);
+    color: #ffffff;
     margin-bottom: var(--space-1);
 }
 
@@ -1147,7 +1147,7 @@ img {
 .tech-tag {
     padding: var(--space-1) var(--space-3);
     background: var(--gray-100);
-    color: var(--text-primary);
+    color: #ffffff;
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: 500;
@@ -1236,7 +1236,7 @@ img {
     font-size: var(--text-xl);
     font-weight: 600;
     margin-bottom: var(--space-8);
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .category-title i {
@@ -1424,7 +1424,7 @@ img {
     font-size: var(--text-xl);
     font-weight: 600;
     margin-bottom: var(--space-2);
-    color: var(--text-primary);
+    color: #ffffff;
 }
 
 .footer-info p {
