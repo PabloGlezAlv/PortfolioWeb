@@ -198,7 +198,7 @@ img {
 
 .section-dark {
     background: var(--gradient-dark);
-    color: var(--white);
+    color: var(--text-primary);
 }
 
 .section-dark .section-title,
@@ -208,7 +208,7 @@ img {
 .section-dark h4,
 .section-dark h5,
 .section-dark h6 {
-    color: var(--white);
+    color: var(--text-primary);
 }
 
 .section-dark p,
@@ -790,7 +790,7 @@ img {
     font-size: var(--text-2xl);
     font-weight: 600;
     margin-bottom: var(--space-8);
-    color: var(--white);
+    color: var(--text-primary);
 }
 
 .timeline-title i {
@@ -933,7 +933,7 @@ img {
 }
 
 .modal-content::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--gray-50);
     border-radius: 0 var(--radius-xl) var(--radius-xl) 0;
 }
 
@@ -968,7 +968,7 @@ img {
 .timeline-info h4 {
     font-size: var(--text-lg);
     font-weight: 600;
-    color: var(--white);
+    color: var(--text-primary);
     margin-bottom: var(--space-1);
 }
 
@@ -1158,7 +1158,7 @@ img {
     top: var(--space-4);
     right: var(--space-4);
     background: rgba(0, 0, 0, 0.8);
-    color: var(--white);
+    color: var(--black);
     padding: var(--space-2) var(--space-3);
     border-radius: var(--radius-lg);
     font-size: var(--text-sm);
@@ -1236,7 +1236,7 @@ img {
     font-size: var(--text-xl);
     font-weight: 600;
     margin-bottom: var(--space-8);
-    color: var(--white);
+    color: var(--text-primary);
 }
 
 .category-title i {
@@ -1255,7 +1255,7 @@ img {
     display: inline-block;
     padding: var(--space-2) var(--space-4);
     background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
+    color: var(--text-primary);
     border-radius: var(--radius-full);
     font-size: var(--text-sm);
     font-weight: 500;
@@ -1408,7 +1408,7 @@ img {
 /* Footer */
 .footer {
     background: var(--gradient-dark);
-    color: var(--white);
+    color: var(--text-primary);
     padding: var(--space-16) 0 var(--space-8);
 }
 
@@ -1424,7 +1424,7 @@ img {
     font-size: var(--text-xl);
     font-weight: 600;
     margin-bottom: var(--space-2);
-    color: var(--white);
+    color: var(--text-primary);
 }
 
 .footer-info p {
@@ -1460,7 +1460,7 @@ img {
     width: 40px;
     height: 40px;
     background: rgba(255, 255, 255, 0.1);
-    color: var(--white);
+    color: var(--text-primary);
     border-radius: var(--radius-lg);
     text-decoration: none;
     transition: var(--transition-fast);
