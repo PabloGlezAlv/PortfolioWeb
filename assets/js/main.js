@@ -676,7 +676,11 @@
         new SkillsAnimation();
         new ProjectFilter();
         new ContactForm();
-        new ProjectModal(); // Init modal
+
+        // Ensure Modal works with all projects
+        setTimeout(() => {
+            new ProjectModal();
+        }, 100);
 
         // Initialize typing animation
         const typingElement = document.querySelector('.typing-text');
