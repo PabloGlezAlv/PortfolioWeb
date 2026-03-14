@@ -67,24 +67,31 @@
 
 <body>
 
+    <a href="../index.html#projects" class="back-btn" style="position:fixed;top:20px;left:20px;z-index:999;display:inline-flex;align-items:center;gap:8px;background:#12d640;color:#000;padding:10px 18px;border-radius:8px;font-weight:600;text-decoration:none;font-family:sans-serif;box-shadow:0 2px 12px rgba(0,0,0,0.3);">&#8592; Back</a>
+
     <main id="main">
         <div id="portfolio-details" class="portfolio-details">
             <div class="container">
 
                 <div class="row">
                     <div class="col-lg-12 portfolio-info">
+                        <br>
                         <span class="status-badge">In Development</span>
                         <h2 style="color: var(--primary-color)">RTBEngine - Game Engine</h2>
                         <ul>
-                            <li>Tech Stack: C++17, OpenGL 4.3+, SDL2, Bullet Physics, FMOD, Lua, ImGui
-                            </li>
-                            <li>Platform: Windows x64</li>
+                            <li><strong>Tech Stack</strong>: C++17, OpenGL 4.3+, SDL2, Bullet Physics, FMOD, Lua, ImGui</li>
+                            <li><strong>Platform</strong>: Windows x64</li>
                         </ul>
 
                         <div class="documentation-content">
-                            <p>RTBEngine is a custom 3D game engine currently in development, built with C++ and
-                                LuaBridge.</p>
-                            <p>Key libraries used: OpenGL 4.3+, SDL2, Bullet Physics, and FMOD.</p>
+                            <p>
+                                Developed a 3D game engine from scratch featuring an <strong>Entity-Component-System (ECS)</strong> architecture,
+                                integrated with <strong>OpenGL/GLEW</strong> for rendering, <strong>Bullet Physics</strong> for rigid-body simulation,
+                                <strong>FMOD</strong> for spatial audio, and <strong>Lua scripting</strong> via LuaBridge.
+                                Includes a custom editor built with <strong>ImGui</strong>, supporting scene hierarchy management,
+                                component inspection, asset browsing, and a visual gizmo system.
+                                Implemented subsystems for animation, UI, reflection/serialization, and math (vectors, quaternions, matrices).
+                            </p>
 
                             <div class="engine-images">
                                 <img src="../assets/img/project/RTBRngine/screen1.png" alt="RTBEngine Editor View">
