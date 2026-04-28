@@ -57,6 +57,18 @@
             box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
         }
 
+        .engine-video {
+            margin-top: 30px;
+        }
+
+        .engine-video video {
+            width: 100%;
+            display: block;
+            background: #000;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
         @media (max-width: 768px) {
             .engine-images {
                 grid-template-columns: 1fr;
@@ -81,6 +93,8 @@
                         <ul>
                             <li><strong>Tech Stack</strong>: C++17, OpenGL 4.3+, SDL2, Bullet Physics, FMOD, Lua, ImGui</li>
                             <li><strong>Platform</strong>: Windows x64</li>
+                            <li><strong>Engine Repository</strong>: <a href="https://github.com/PabloGlezAlv/RTBEngine" target="_blank" rel="noopener">RTBEngine</a></li>
+                            <li><strong>Editor Repository</strong>: <a href="https://github.com/PabloGlezAlv/RTBEngineEditor" target="_blank" rel="noopener">RTBEngineEditor</a></li>
                         </ul>
 
                         <div class="documentation-content">
@@ -92,6 +106,13 @@
                                 component inspection, asset browsing, and a visual gizmo system.
                                 Implemented subsystems for animation, UI, reflection/serialization, and math (vectors, quaternions, matrices).
                             </p>
+
+                            <div class="engine-video">
+                                <video controls preload="metadata" poster="../assets/img/project/RTBRngine/screen1.png">
+                                    <source src="../assets/img/project/RTBRngine/RtbEngineDemo.mp4" type="video/mp4">
+                                    Your browser does not support the video tag.
+                                </video>
+                            </div>
 
                             <div class="engine-images">
                                 <img src="../assets/img/project/RTBRngine/screen1.png" alt="RTBEngine Editor View">

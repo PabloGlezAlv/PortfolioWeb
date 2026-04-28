@@ -573,7 +573,7 @@
         }
 
         init() {
-            if (!this.modal) return;
+            if (!this.modal || !this.modalBody || !this.closeBtn) return;
             this.bindEvents();
         }
 
@@ -621,18 +621,7 @@
                 const content = doc.querySelector('#portfolio-details') || doc.querySelector('#main');
 
                 if (content) {
-                    // Update image paths if they are relative
-                    const images = content.querySelectorAll('img');
-                    images.forEach(img => {
-                        const src = img.getAttribute('src');
-                        if (src && !src.startsWith('http') && !src.startsWith('/')) {
-                            // Assuming projects are in /projects/ folder and assets in /assets/
-                            // If src is "../assets/...", remove "../"
-                            if (src.startsWith('../assets')) {
-                                img.src = src.substring(3);
-                            }
-                        }
-                    });
+                    this.prepareProjectContent(content);
 
                     this.modalBody.innerHTML = '';
                     this.modalBody.appendChild(content);
@@ -646,8 +635,33 @@
 
             } catch (error) {
                 console.error('Error loading project:', error);
-                this.modalBody.innerHTML = '<div class="alert alert-danger">Error loading project details. Please try again.</div>';
+                this.showProjectFrame(url);
             }
+        }
+
+        prepareProjectContent(content) {
+            content.querySelectorAll('.back-btn').forEach(button => button.remove());
+
+            const updateAssetPath = (element, attribute) => {
+                const value = element.getAttribute(attribute);
+                if (value && value.startsWith('../assets')) {
+                    element.setAttribute(attribute, value.substring(3));
+                }
+            };
+
+            content.querySelectorAll('img, video, source').forEach(element => {
+                updateAssetPath(element, 'src');
+                updateAssetPath(element, 'poster');
+            });
+        }
+
+        showProjectFrame(url) {
+            this.modalBody.innerHTML = '';
+            const frame = document.createElement('iframe');
+            frame.className = 'project-detail-frame';
+            frame.src = url;
+            frame.title = 'Project details';
+            this.modalBody.appendChild(frame);
         }
 
         open() {
@@ -655,11 +669,13 @@
             // Force reflow
             this.modal.offsetHeight;
             this.modal.classList.add('active');
+            this.modal.setAttribute('aria-hidden', 'false');
             document.body.style.overflow = 'hidden'; // Prevent background scrolling
         }
 
         close() {
             this.modal.classList.remove('active');
+            this.modal.setAttribute('aria-hidden', 'true');
             setTimeout(() => {
                 this.modal.style.display = 'none';
                 this.modalBody.innerHTML = ''; // Clear content

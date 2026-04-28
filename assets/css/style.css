@@ -903,6 +903,8 @@ img {
     font-weight: bold;
     cursor: pointer;
     z-index: 10;
+    border: 0;
+    line-height: 1;
     box-shadow: var(--shadow-md);
     transition: var(--transition-fast);
 }
@@ -915,6 +917,23 @@ img {
 
 #modal-body {
     padding: var(--space-6);
+}
+
+#modal-body .back-btn {
+    display: none !important;
+}
+
+#modal-body video,
+#modal-body iframe {
+    max-width: 100%;
+}
+
+.project-detail-frame {
+    width: 100%;
+    min-height: 75vh;
+    border: 0;
+    border-radius: var(--radius-xl);
+    background: var(--white);
 }
 
 /* Adjust portfolio details for modal context */
