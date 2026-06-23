@@ -625,10 +625,7 @@
 
                     this.modalBody.innerHTML = '';
                     this.modalBody.appendChild(content);
-
-                    // Re-initialize any scripts if necessary (e.g. carousels)
-                    // For typical static content this is fine. 
-                    // Video iframes should load automatically.
+                    this.initializeMedia(content);
                 } else {
                     throw new Error('Content not found');
                 }
@@ -652,6 +649,23 @@
             content.querySelectorAll('img, video, source').forEach(element => {
                 updateAssetPath(element, 'src');
                 updateAssetPath(element, 'poster');
+            });
+
+            content.querySelectorAll('video').forEach(video => {
+                const source = video.querySelector('source');
+                if (!video.getAttribute('src') && source) {
+                    const sourceSrc = source.getAttribute('src');
+                    if (sourceSrc) {
+                        video.setAttribute('src', sourceSrc);
+                    }
+                    source.remove();
+                }
+            });
+        }
+
+        initializeMedia(content) {
+            content.querySelectorAll('video').forEach(video => {
+                video.load();
             });
         }
 

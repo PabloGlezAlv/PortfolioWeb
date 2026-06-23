@@ -44,23 +44,10 @@
             margin-bottom: 10px;
         }
 
-        .engine-images {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-top: 30px;
-        }
-
-        .engine-images img {
-            width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-        }
-
         .engine-videos {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 24px;
             margin-top: 30px;
         }
 
@@ -82,12 +69,6 @@
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
         }
 
-        @media (max-width: 768px) {
-            .engine-images,
-            .engine-videos {
-                grid-template-columns: 1fr;
-            }
-        }
     </style>
 </head>
 
@@ -131,23 +112,20 @@
                             <div class="engine-videos">
                                 <div class="engine-video">
                                     <h3>Engine &amp; Editor Demo</h3>
-                                    <video controls preload="metadata" poster="../assets/img/project/RTBRngine/screen1.png">
-                                        <source src="../assets/img/project/RTBRngine/RTBEngineDemo2.mp4" type="video/mp4">
+                                    <video controls playsinline preload="metadata"
+                                        poster="../assets/img/project/RTBRngine/poster-editor.png"
+                                        src="../assets/img/project/RTBRngine/RTBEngineDemo2.mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
                                 <div class="engine-video">
                                     <h3>Online Multiplayer Demo</h3>
-                                    <video controls preload="metadata" poster="../assets/img/project/RTBRngine/screen2.png">
-                                        <source src="../assets/img/project/RTBRngine/RtbEngineGameOnline.mp4" type="video/mp4">
+                                    <video controls playsinline preload="metadata"
+                                        poster="../assets/img/project/RTBRngine/poster-online.png"
+                                        src="../assets/img/project/RTBRngine/RtbEngineGameOnline.mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
-                            </div>
-
-                            <div class="engine-images">
-                                <img src="../assets/img/project/RTBRngine/screen1.png" alt="RTBEngine Editor View">
-                                <img src="../assets/img/project/RTBRngine/screen2.png" alt="RTBEngine Rendering View">
                             </div>
                         </div>
                     </div>
