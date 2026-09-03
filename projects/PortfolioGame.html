@@ -2,227 +2,85 @@
 <html lang="en">
 
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-    <title>PortfolioGame - Hitman-Style Stealth Game</title>
-    <meta content="Stealth infiltration game in Unreal Engine 5 featuring StateTree AI, security cameras, and dynamic art gallery exhibits." name="description">
-    <meta content="Unreal Engine 5, StateTree, AI, Stealth, Hitman, Blueprints, C++" name="keywords">
+  <title>Portfolio Game (2026)</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
 
-    <!-- Favicons -->
-    <link href="../assets/img/favicon.png" rel="icon">
-    <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+  <!-- Favicons -->
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-        rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
 
-    <!-- Vendor CSS Files -->
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
-    <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
-    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
+  <!-- Vendor CSS Files -->
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/icofont/icofont.min.css" rel="stylesheet">
+  <link href="../assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="../assets/vendor/owl.carousel/assets/owl.carousel.min.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/venobox/venobox.css" rel="stylesheet">
 
-    <!-- Template Main CSS File -->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <style>
-        .documentation-content h2 {
-            color: var(--primary-color);
-            margin-top: 30px;
-        }
-
-        .status-badge {
-            background: #ffc107;
-            color: #000;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 10px;
-        }
-
-        .gallery-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
-            gap: 20px;
-            margin-top: 30px;
-            margin-bottom: 30px;
-        }
-
-        .gallery-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-
-        .gallery-item:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
-            border-color: rgba(18, 214, 64, 0.3);
-        }
-
-        .gallery-item img {
-            width: 100%;
-            height: 240px;
-            object-fit: cover;
-            display: block;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-        }
-
-        .gallery-caption {
-            padding: 16px;
-        }
-
-        .gallery-caption h4 {
-            color: #12d640;
-            font-size: 1.05rem;
-            margin-bottom: 6px;
-            font-weight: 600;
-        }
-
-        .gallery-caption p {
-            color: #ccc;
-            font-size: 0.88rem;
-            margin-bottom: 0;
-            line-height: 1.5;
-        }
-
-        .mechanic-card {
-            background: rgba(255, 255, 255, 0.03);
-            border-left: 3px solid #12d640;
-            border-radius: 0 8px 8px 0;
-            padding: 16px 20px;
-            margin: 16px 0;
-        }
-
-        .mechanic-card h4 {
-            color: #fff;
-            font-size: 1rem;
-            margin-bottom: 6px;
-        }
-
-        .mechanic-card p {
-            margin-bottom: 0;
-            color: #bbb;
-            font-size: 0.92rem;
-        }
-    </style>
+  <!-- Template Main CSS File -->
+  <link href="../assets/css/style.css" rel="stylesheet">
 </head>
 
-<body>
+<body data-gr-c-s-loaded="true">
 
-    <a href="../index.html#projects" class="back-btn"
-        style="position:fixed;top:20px;left:20px;z-index:999;display:inline-flex;align-items:center;gap:8px;background:#12d640;color:#000;padding:10px 18px;border-radius:8px;font-weight:600;text-decoration:none;font-family:sans-serif;box-shadow:0 2px 12px rgba(0,0,0,0.3);">&#8592; Back</a>
+  <!-- ======= Portfolio Details ======= -->
+  <a href="../index.html#projects" class="back-btn" style="position:fixed;top:20px;left:20px;z-index:999;display:inline-flex;align-items:center;gap:8px;background:#12d640;color:#000;padding:10px 18px;border-radius:8px;font-weight:600;text-decoration:none;font-family:sans-serif;box-shadow:0 2px 12px rgba(0,0,0,0.3);">&#8592; Back</a>
+  <main id="main">
+    <div id="portfolio-details" class="portfolio-details">
+      <div class="container">
 
-    <main id="main">
-        <div id="portfolio-details" class="portfolio-details">
-            <div class="container">
+        <div class="row">
 
-                <div class="row">
-                    <div class="col-lg-12 portfolio-info">
-                        <br>
-                        <span class="status-badge">In Development</span>
-                        <h2 style="color: var(--primary-color)">PortfolioGame - Hitman-Style Stealth Prototype</h2>
-                        <ul>
-                            <li><strong>Tech Stack</strong>: Unreal Engine 5, Blueprints, StateTree AI, Materials &amp; Shaders, C++</li>
-                            <li><strong>Genre</strong>: 3D Stealth / Infiltration &amp; Action</li>
-                            <li><strong>Platform</strong>: Windows PC</li>
-                            <li><strong>Repository</strong>: <a href="https://github.com/PabloGlezAlv/PortfolioGame" target="_blank" rel="noopener">github.com/PabloGlezAlv/PortfolioGame</a></li>
-                        </ul>
+          <div class="col-lg-12 portfolio-info">
+            <br>
+            <h2 style="color:#12d640">Portfolio Game (2026)</h2>
+            <ul>
+              <li><strong>Tech Stack</strong>: Unreal Engine 5, Blueprints, C++</li>
+              <li><strong>Github URL</strong>: <a href="https://github.com/PabloGlezAlv/PortfolioGame" target="_blank">Project Link</a></li>
+            </ul>
 
-                        <div class="documentation-content">
-                            <p>
-                                <strong>PortfolioGame</strong> is a third-person stealth game built in <strong>Unreal Engine 5</strong>, heavily inspired by the strategic infiltration mechanics of the <em>Hitman</em> series. The game transforms the traditional portfolio into a playable, interactive museum experience: every exhibit displayed along the galleries showcases real past projects developed by the creator.
-                            </p>
-
-                            <div class="mechanic-card">
-                                <h4>🎯 Main Objective: Retrieve the CV &amp; Escape</h4>
-                                <p>
-                                    The player infiltrates the art museum with a clear mission: navigate the protected galleries, locate and retrieve the developer's curriculum (CV), and safely extract by returning back to the starting exit point without getting eliminated.
-                                </p>
-                            </div>
-
-                            <div class="mechanic-card">
-                                <h4>🧠 StateTree Enemy AI</h4>
-                                <p>
-                                    Enemy museum guards are driven by Unreal Engine 5's modern <strong>StateTree</strong> architecture (<code>ST_MuseumGuard</code>). The guards perform dynamic waypoint patrols, monitor their surroundings with sight cones, investigate suspicious disturbances, enter alert states, and coordinate relentless pursuits when the intruder is spotted.
-                                </p>
-                            </div>
-
-                            <div class="mechanic-card">
-                                <h4>👻 Invisibility &amp; Camouflage Mechanics</h4>
-                                <p>
-                                    To slip past vigilant guards and navigate tight corridors, the player possesses an advanced cloaking ability. Activating invisibility alters the character's dynamic material into an electric stealth cloak, masking them from direct line of sight and granting critical moments to bypass patrol routes.
-                                </p>
-                            </div>
-
-                            <div class="mechanic-card">
-                                <h4>📹 Handheld Surveillance Device (Camera Book)</h4>
-                                <p>
-                                    Equipped with a tactical handheld surveillance tablet/book, the player can inspect live feeds from closed-circuit security cameras positioned across the entire gallery. This provides essential situational awareness, allowing players to scout guard patrol patterns, spot obstacles, and plan their infiltration path beforehand.
-                                </p>
-                            </div>
-
-                            <div class="mechanic-card">
-                                <h4>🎨 Interactive Art Gallery of Past Projects</h4>
-                                <p>
-                                    As players advance through the museum's interconnected wings, the gallery walls feature framed showcases and artwork representing previous works and prototypes (such as <em>Space Scape</em>, <em>RTBEngine</em>, and others), blending portfolio presentation directly into world design.
-                                </p>
-                            </div>
-
-                            <h3 style="color: var(--primary-color); margin-top: 35px; font-size: 1.25rem;">Project Gallery</h3>
-
-                            <div class="gallery-grid">
-                                <div class="gallery-item">
-                                    <img src="../assets/img/project/PortfolioGame/ImagePortada.png" alt="Stealth Invisibility and Mission Objective">
-                                    <div class="gallery-caption">
-                                        <h4>Stealth Cloak &amp; Art Gallery</h4>
-                                        <p>Invisibility camouflage activated while navigating the gallery hall adorned with project artwork, with the active objective to return to the exit.</p>
-                                    </div>
-                                </div>
-
-                                <div class="gallery-item">
-                                    <img src="../assets/img/project/PortfolioGame/ImageCameras.png" alt="Security Camera Monitoring Device">
-                                    <div class="gallery-caption">
-                                        <h4>Surveillance Camera Book</h4>
-                                        <p>Handheld surveillance monitor showing simultaneous live camera feeds across gallery corridors to track enemy guard patrols.</p>
-                                    </div>
-                                </div>
-
-                                <div class="gallery-item">
-                                    <img src="../assets/img/project/PortfolioGame/ImageRunning.png" alt="StateTree Guard Chase">
-                                    <div class="gallery-caption">
-                                        <h4>Alert &amp; Pursuit</h4>
-                                        <p>Patrolling museum guards in full alert state giving chase after detecting the intruder during the extraction phase.</p>
-                                    </div>
-                                </div>
-
-                                <div class="gallery-item">
-                                    <img src="../assets/img/project/PortfolioGame/ImageStateTree.png" alt="Unreal Engine StateTree Setup">
-                                    <div class="gallery-caption">
-                                        <h4>Unreal Engine 5 &amp; StateTree AI</h4>
-                                        <p>Level layout inside the Unreal Editor, displaying the guard AI controller and StateTree asset (<code>ST_MuseumGuard</code>).</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
+            <div class="paragraph">
+              A small <strong>Hitman-style stealth game</strong> made in Unreal Engine set in an art gallery featuring past portfolio projects.
+              The player must use <strong>invisibility</strong> and a <strong>surveillance camera book</strong> to avoid enemy guards powered by <strong>StateTree AI</strong>, retrieve the CV, and return to the starting area.
             </div>
-        </div>
-    </main>
 
-    <script src="../assets/vendor/jquery/jquery.min.js"></script>
-    <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
-    <script src="../assets/js/main.js"></script>
+            <div class="paragraph center">
+              <div style="display: flex; flex-wrap: wrap; justify-content: center;">
+                <img class="pc-screenshot" src="../assets/img/project/PortfolioGame/ImagePortada.png" alt="Portfolio Game Screenshot" style="width: 400px; margin: 0 10px 20px 10px;" />
+                <img class="pc-screenshot" src="../assets/img/project/PortfolioGame/ImageCameras.png" alt="Portfolio Game Screenshot" style="width: 400px; margin: 0 10px 20px 10px;" />
+                <img class="pc-screenshot" src="../assets/img/project/PortfolioGame/ImageRunning.png" alt="Portfolio Game Screenshot" style="width: 400px; margin: 0 10px 20px 10px;" />
+                <img class="pc-screenshot" src="../assets/img/project/PortfolioGame/ImageStateTree.png" alt="Portfolio Game Screenshot" style="width: 400px; margin: 0 10px 20px 10px;" />
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div><!-- End Portfolio Details -->
+  </main><!-- End #main -->
+
+  <!-- Vendor JS Files -->
+  <script async="" src="//www.google-analytics.com/analytics.js"></script><script src="../assets/vendor/jquery/jquery.min.js"></script>
+  <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="../assets/vendor/jquery.easing/jquery.easing.min.js"></script>
+  <script src="../assets/vendor/php-email-form/validate.js"></script>
+  <script src="../assets/vendor/waypoints/jquery.waypoints.min.js"></script>
+  <script src="../assets/vendor/counterup/counterup.min.js"></script>
+  <script src="../assets/vendor/owl.carousel/owl.carousel.min.js"></script>
+  <script src="../assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="../assets/vendor/venobox/venobox.min.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="../assets/js/main.js"></script>
 
 </body>
-
 </html>
