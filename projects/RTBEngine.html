@@ -6,8 +6,8 @@
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
     <title>RTBEngine - Custom Game Engine</title>
-    <meta content="Custom 3D Game Engine built with C++ and OpenGL" name="description">
-    <meta content="Game Engine, C++, OpenGL, ECS, Lua" name="keywords">
+    <meta content="Custom Windows game engine: GameObject–Component, hybrid ECS, dual OpenGL/Vulkan RHI, ImGui editor, and online multiplayer" name="description">
+    <meta content="Game Engine, C++, OpenGL, Vulkan, ECS, Lua" name="keywords">
 
     <!-- Favicons -->
     <link href="../assets/img/favicon.png" rel="icon">
@@ -31,17 +31,6 @@
         .documentation-content h2 {
             color: var(--primary-color);
             margin-top: 30px;
-        }
-
-        .status-badge {
-            background: #ffc107;
-            color: #000;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-weight: bold;
-            font-size: 0.8rem;
-            display: inline-block;
-            margin-bottom: 10px;
         }
 
         .engine-videos {
@@ -83,10 +72,9 @@
                 <div class="row">
                     <div class="col-lg-12 portfolio-info">
                         <br>
-                        <span class="status-badge">In Development</span>
-                        <h2 style="color: var(--primary-color)">RTBEngine - Game Engine</h2>
+                        <h2 style="color: var(--primary-color)">RTBEngine - Game Engine (2026)</h2>
                         <ul>
-                            <li><strong>Tech Stack</strong>: C++17, OpenGL 4.3+, SDL2, Bullet Physics, FMOD, Lua, ImGui</li>
+                            <li><strong>Tech Stack</strong>: C++17, OpenGL 4.3+, Vulkan, SDL2, Bullet Physics, FMOD, Lua, ImGui</li>
                             <li><strong>Platform</strong>: Windows x64</li>
                             <li><strong>Engine Repository</strong>: <a href="https://github.com/PabloGlezAlv/RTBEngine" target="_blank" rel="noopener">RTBEngine</a></li>
                             <li><strong>Editor Repository</strong>: <a href="https://github.com/PabloGlezAlv/RTBEngineEditor" target="_blank" rel="noopener">RTBEngineEditor</a></li>
@@ -94,19 +82,15 @@
 
                         <div class="documentation-content">
                             <p>
-                                Developed a 3D game engine from scratch featuring an <strong>Entity-Component-System (ECS)</strong> architecture,
-                                integrated with <strong>OpenGL/GLEW</strong> for rendering, <strong>Bullet Physics</strong> for rigid-body simulation,
-                                <strong>FMOD</strong> for spatial audio, and <strong>Lua scripting</strong> via LuaBridge.
-                                Includes a custom editor built with <strong>ImGui</strong>, supporting scene hierarchy management,
-                                component inspection, asset browsing, and a visual gizmo system.
-                                Implemented subsystems for animation, UI, reflection/serialization, and math (vectors, quaternions, matrices).
+                                Custom Windows game engine built from scratch around a <strong>GameObject–Component</strong> scene
+                                (Lua serialization, reflection, component lifecycle) with a <strong>hybrid ECS</strong> path for
+                                performance-critical simulation (e.g. projectiles). <strong>Dual RHI</strong> (OpenGL/GLEW and Vulkan):
+                                shadows, DDGI, localized volume fog/post, and a unified present path for editor, game view, and shipped builds.
                             </p>
                             <p>
-                                Added a <strong>host-authoritative multiplayer stack</strong> with LAN lobby discovery and
-                                <strong>internet relay matchmaking</strong> (HTTP + UDP relay server).
-                                Built <strong>NetworkIdentity</strong> and <strong>NetworkTransform</strong> replication,
-                                RTBN messaging over Winsock UDP, lobby workflows, and a sample online combat prototype
-                                with third-person movement, projectiles, and round-based gameplay.
+                                Bullet rigid bodies, FMOD spatial audio, skeletal animation, and UI canvas.
+                                <strong>ImGui</strong> editor: hierarchy, inspectors, assets, gizmos, prefab editing, and play mode.
+                                Includes online multiplayer gameplay (host-authoritative combat, replication) and export to standalone player.
                             </p>
 
                             <div class="engine-videos">
@@ -119,10 +103,9 @@
                                     </video>
                                 </div>
                                 <div class="engine-video">
-                                    <h3>Online Multiplayer Demo</h3>
+                                    <h3>Final Demo</h3>
                                     <video controls playsinline preload="metadata"
-                                        poster="../assets/img/project/RTBRngine/poster-online.png"
-                                        src="../assets/img/project/RTBRngine/RtbEngineGameOnline.mp4">
+                                        src="../assets/img/project/RTBRngine/Video%20demo%20final.mp4">
                                         Your browser does not support the video tag.
                                     </video>
                                 </div>
